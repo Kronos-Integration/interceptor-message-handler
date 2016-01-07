@@ -42,6 +42,6 @@
   },
   "dependencies": {
     "kronos-interceptor": "^1.0.0",
-    "kronos-message": "^2.0.0"
+    "kronos-message": "^2.0.1"
   }
 }
