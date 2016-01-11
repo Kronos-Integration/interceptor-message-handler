@@ -9,6 +9,7 @@ const chai = require('chai'),
   should = chai.should(),
   llm = require('loglevel-mixin'),
   MessageHandler = require('../index').MessageHandler,
+  MockReceiveInterceptor = require('kronos-test-interceptor').MockReceiveInterceptor,
   connectorMixin = require('kronos-interceptor').ConnectorMixin;
 
 
@@ -17,32 +18,6 @@ const stepMock = {
   "type": "dummy step type"
 };
 llm.defineLogLevelProperties(stepMock, llm.defaultLogLevels, llm.defaultLogLevels);
-
-class _DummyInterceptor {}
-class MockReceiveInterceptor extends connectorMixin(_DummyInterceptor) {
-
-  constructor(validateFunction, done) {
-    super();
-
-    const props = {
-      validateFunction: {
-        value: validateFunction
-      },
-      done: {
-        value: done
-      }
-    };
-
-    Object.defineProperties(this, props);
-  }
-
-  receive(request, oldRequest) {
-    // This is a dummy implementation. Must be overwritten by the derived object.
-    this.validateFunction(request, oldRequest);
-    this.done();
-  }
-}
-
 
 
 describe('Message Handler', function () {
@@ -85,12 +60,65 @@ describe('Message Handler', function () {
         "info": "first message",
         "payload": {}
       });
-    }, done);
+      done();
+    });
 
     messageHandler.connected = mockReceive;
 
     messageHandler.receive(sendMessage);
 
-    assert.ok(messageHandler);
   });
+
+  it('Send message: Simulate multi hops', function (done) {
+    const endpoint = {
+      "step": stepMock
+    };
+
+    const sendMessage = {
+      "info": "first message"
+    };
+
+    const messageHandler1 = new MessageHandler(endpoint);
+    const messageHandler2 = new MessageHandler(endpoint);
+    const messageHandler3 = new MessageHandler(endpoint);
+
+    const mockReceive = new MockReceiveInterceptor(function (request, oldRequest) {
+
+      assert.ok(request);
+      assert.equal(request.hops.length, 3);
+      assert.ok(request.hops[0].host);
+      assert.ok(request.hops[0].id);
+      assert.ok(request.hops[0].time);
+
+      for (let i = 0; i < 3; i++) {
+        delete(request.hops[i].host);
+        delete(request.hops[i].id);
+        delete(request.hops[i].time);
+      }
+
+      assert.deepEqual(request, {
+        "hops": [{
+          "stepName": "dummy step name",
+          "stepType": "dummy step type"
+        }, {
+          "stepName": "dummy step name",
+          "stepType": "dummy step type"
+        }, {
+          "stepName": "dummy step name",
+          "stepType": "dummy step type"
+        }],
+        "info": "first message",
+        "payload": {}
+      });
+      done();
+    });
+
+    messageHandler1.connected = messageHandler2;
+    messageHandler2.connected = messageHandler3;
+    messageHandler3.connected = mockReceive;
+
+    messageHandler1.receive(sendMessage);
+  });
+
+
 });
