@@ -54,6 +54,7 @@ describe('Message Handler', function () {
 
       assert.deepEqual(request, {
         "hops": [{
+          "endpoint": undefined,
           "stepName": "dummy step name",
           "stepType": "dummy step type"
         }],
@@ -98,12 +99,15 @@ describe('Message Handler', function () {
 
       assert.deepEqual(request, {
         "hops": [{
+          "endpoint": undefined,
           "stepName": "dummy step name",
           "stepType": "dummy step type"
         }, {
+          "endpoint": undefined,
           "stepName": "dummy step name",
           "stepType": "dummy step type"
         }, {
+          "endpoint": undefined,
           "stepName": "dummy step name",
           "stepType": "dummy step type"
         }],
