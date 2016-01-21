@@ -21,11 +21,11 @@
   "homepage": "https://github.com/Kronos-Integration/kronos-interceptor-message-handler#readme",
   "devDependencies": {
     "chai": "3.4.1",
-    "istanbul": "^0.4.1",
-    "kronos-test-interceptor": "^1.0.0",
-    "loglevel-mixin": "^1.1.0",
+    "istanbul": "0.4.2",
+    "kronos-test-interceptor": "1.6.1",
+    "loglevel-mixin": "1.2.0",
     "mocha": "^2.3.4",
-    "semantic-release": "6.0.3"
+    "semantic-release": "6.1.0"
   },
   "contributors": [
     {

@@ -24,7 +24,7 @@ describe('Message Handler', function () {
 
   it('Create', function () {
     const endpoint = {
-      "step": stepMock
+      "owner": stepMock
     };
     const messageHandler = new MessageHandler(endpoint);
     assert.ok(messageHandler);
@@ -32,7 +32,7 @@ describe('Message Handler', function () {
 
   it('Send message', function (done) {
     const endpoint = {
-      "step": stepMock
+      "owner": stepMock
     };
 
     const sendMessage = {
@@ -72,7 +72,7 @@ describe('Message Handler', function () {
 
   it('Send message: Simulate multi hops', function (done) {
     const endpoint = {
-      "step": stepMock
+      "owner": stepMock
     };
 
     const sendMessage = {
