@@ -24,7 +24,8 @@ describe('Message Handler', function () {
 
   it('Create', function () {
     const endpoint = {
-      "owner": stepMock
+      "owner": stepMock,
+      "name": "gumboIn"
     };
     const messageHandler = new MessageHandler(endpoint);
     assert.ok(messageHandler);
@@ -32,7 +33,8 @@ describe('Message Handler', function () {
 
   it('Send message', function (done) {
     const endpoint = {
-      "owner": stepMock
+      "owner": stepMock,
+      "name": "gumboIn"
     };
 
     const sendMessage = {
@@ -54,7 +56,7 @@ describe('Message Handler', function () {
 
       assert.deepEqual(request, {
         "hops": [{
-          "endpoint": undefined,
+          "endpoint": "gumboIn",
           "stepName": "dummy step name",
           "stepType": "dummy step type"
         }],
@@ -72,7 +74,8 @@ describe('Message Handler', function () {
 
   it('Send message: Simulate multi hops', function (done) {
     const endpoint = {
-      "owner": stepMock
+      "owner": stepMock,
+      "name": "gumboIn"
     };
 
     const sendMessage = {
@@ -99,15 +102,15 @@ describe('Message Handler', function () {
 
       assert.deepEqual(request, {
         "hops": [{
-          "endpoint": undefined,
+          "endpoint": "gumboIn",
           "stepName": "dummy step name",
           "stepType": "dummy step type"
         }, {
-          "endpoint": undefined,
+          "endpoint": "gumboIn",
           "stepName": "dummy step name",
           "stepType": "dummy step type"
         }, {
-          "endpoint": undefined,
+          "endpoint": "gumboIn",
           "stepName": "dummy step name",
           "stepType": "dummy step type"
         }],
