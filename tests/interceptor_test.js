@@ -27,7 +27,7 @@ describe('Message Handler', function () {
       "owner": stepMock,
       "name": "gumboIn"
     };
-    const messageHandler = new MessageHandler(endpoint);
+    const messageHandler = new MessageHandler(undefined, endpoint);
     assert.ok(messageHandler);
   });
 
@@ -41,7 +41,7 @@ describe('Message Handler', function () {
       "info": "first message"
     };
 
-    const messageHandler = new MessageHandler(endpoint);
+    const messageHandler = new MessageHandler(undefined, endpoint);
     const mockReceive = new MockReceiveInterceptor(function (request, oldRequest) {
 
       assert.ok(request);
@@ -82,9 +82,9 @@ describe('Message Handler', function () {
       "info": "first message"
     };
 
-    const messageHandler1 = new MessageHandler(endpoint);
-    const messageHandler2 = new MessageHandler(endpoint);
-    const messageHandler3 = new MessageHandler(endpoint);
+    const messageHandler1 = new MessageHandler(undefined, endpoint);
+    const messageHandler2 = new MessageHandler(undefined, endpoint);
+    const messageHandler3 = new MessageHandler(undefined, endpoint);
 
     const mockReceive = new MockReceiveInterceptor(function (request, oldRequest) {
 

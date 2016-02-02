@@ -5,6 +5,4 @@ const MessageHandler = require('./lib/messageHandler').MessageHandler;
 
 exports.MessageHandler = MessageHandler;
 
-exports.registerWithManager = function (manager) {
-	manager.registerInterceptor(MessageHandler);
-};
+exports.registerWithManager = manager => manager.registerInterceptor(MessageHandler);
