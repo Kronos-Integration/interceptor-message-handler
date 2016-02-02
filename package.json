@@ -23,7 +23,7 @@
   "devDependencies": {
     "chai": "3.5.0",
     "istanbul": "0.4.2",
-    "kronos-test-interceptor": "2.0.1",
+    "kronos-test-interceptor": "2.0.2",
     "loglevel-mixin": "1.2.0",
     "mocha": "^2.4.3",
     "semantic-release": "6.1.0"
