@@ -30,7 +30,7 @@
     "semantic-release": "6.2.1"
   },
   "dependencies": {
-    "kronos-interceptor": "^2.0.1",
+    "kronos-interceptor": "^2.2.1",
     "kronos-message": "^2.0.1"
   },
   "contributors": [
