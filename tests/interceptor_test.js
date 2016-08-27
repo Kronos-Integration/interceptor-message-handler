@@ -1,7 +1,7 @@
 /* global describe, it, xit */
 /* jslint node: true, esnext: true */
 
-"use strict";
+'use strict';
 
 const chai = require('chai'),
   assert = chai.assert,
@@ -14,8 +14,8 @@ const chai = require('chai'),
 
 
 const stepMock = {
-  "name": "dummy step name",
-  "type": "dummy step type"
+  name: 'dummy step name',
+  type: 'dummy step type'
 };
 llm.defineLogLevelProperties(stepMock, llm.defaultLogLevels, llm.defaultLogLevels);
 
@@ -24,8 +24,8 @@ describe('Message Handler', function () {
 
   it('Create', function () {
     const endpoint = {
-      "owner": stepMock,
-      "name": "gumboIn"
+      owner: stepMock,
+      name: 'gumboIn'
     };
     const messageHandler = new MessageHandler(undefined, endpoint);
     assert.ok(messageHandler);
@@ -33,12 +33,12 @@ describe('Message Handler', function () {
 
   it('Send message', function (done) {
     const endpoint = {
-      "owner": stepMock,
-      "name": "gumboIn"
+      owner: stepMock,
+      name: 'gumboIn'
     };
 
     const sendMessage = {
-      "info": "first message"
+      info: 'first message'
     };
 
     const messageHandler = new MessageHandler(undefined, endpoint);
@@ -55,13 +55,13 @@ describe('Message Handler', function () {
       delete(request.hops[0].time);
 
       assert.deepEqual(request, {
-        "hops": [{
-          "endpoint": "gumboIn",
-          "stepName": "dummy step name",
-          "stepType": "dummy step type"
+        hops: [{
+          endpoint: 'gumboIn',
+          stepName: 'dummy step name',
+          stepType: 'dummy step type'
         }],
-        "info": "first message",
-        "payload": {}
+        info: 'first message',
+        payload: {}
       });
       done();
     });
@@ -74,12 +74,12 @@ describe('Message Handler', function () {
 
   it('Send message: Simulate multi hops', function (done) {
     const endpoint = {
-      "owner": stepMock,
-      "name": "gumboIn"
+      owner: stepMock,
+      name: 'gumboIn'
     };
 
     const sendMessage = {
-      "info": "first message"
+      info: 'first message'
     };
 
     const messageHandler1 = new MessageHandler(undefined, endpoint);
@@ -101,21 +101,21 @@ describe('Message Handler', function () {
       }
 
       assert.deepEqual(request, {
-        "hops": [{
-          "endpoint": "gumboIn",
-          "stepName": "dummy step name",
-          "stepType": "dummy step type"
+        hops: [{
+          endpoint: 'gumboIn',
+          stepName: 'dummy step name',
+          stepType: 'dummy step type'
         }, {
-          "endpoint": "gumboIn",
-          "stepName": "dummy step name",
-          "stepType": "dummy step type"
+          endpoint: 'gumboIn',
+          stepName: 'dummy step name',
+          stepType: 'dummy step type'
         }, {
-          "endpoint": "gumboIn",
-          "stepName": "dummy step name",
-          "stepType": "dummy step type"
+          endpoint: 'gumboIn',
+          stepName: 'dummy step name',
+          stepType: 'dummy step type'
         }],
-        "info": "first message",
-        "payload": {}
+        info: 'first message',
+        payload: {}
       });
       done();
     });

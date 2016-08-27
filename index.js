@@ -1,5 +1,5 @@
 /* jslint node: true, esnext: true */
-"use strict";
+'use strict';
 
 const MessageHandler = require('./lib/messageHandler').MessageHandler;
 
