@@ -12,13 +12,12 @@ const chai = require('chai'),
   MockReceiveInterceptor = require('kronos-test-interceptor').MockReceiveInterceptor,
   connectorMixin = require('kronos-interceptor').ConnectorMixin;
 
-
 const stepMock = {
   name: 'dummy step name',
   type: 'dummy step type'
 };
-llm.defineLogLevelProperties(stepMock, llm.defaultLogLevels, llm.defaultLogLevels);
 
+llm.defineLogLevelProperties(stepMock);
 
 describe('Message Handler', function () {
 
@@ -126,6 +125,5 @@ describe('Message Handler', function () {
 
     messageHandler1.receive(sendMessage);
   });
-
 
 });
