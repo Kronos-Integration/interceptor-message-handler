@@ -8,7 +8,7 @@ const chai = require('chai'),
   expect = chai.expect,
   should = chai.should(),
   llm = require('loglevel-mixin'),
-  MessageHandler = require('../index').MessageHandler,
+  MessageHandlerInterceptor = require('../dist/module').MessageHandlerInterceptor,
   MockReceiveInterceptor = require('kronos-test-interceptor').MockReceiveInterceptor,
   connectorMixin = require('kronos-interceptor').ConnectorMixin;
 
@@ -26,7 +26,7 @@ describe('Message Handler', function () {
       owner: stepMock,
       name: 'gumboIn'
     };
-    const messageHandler = new MessageHandler(undefined, endpoint);
+    const messageHandler = new MessageHandlerInterceptor(undefined, endpoint);
     assert.ok(messageHandler);
   });
 
@@ -40,7 +40,7 @@ describe('Message Handler', function () {
       info: 'first message'
     };
 
-    const messageHandler = new MessageHandler(undefined, endpoint);
+    const messageHandler = new MessageHandlerInterceptor(undefined, endpoint);
     const mockReceive = new MockReceiveInterceptor(function (request, oldRequest) {
 
       assert.ok(request);
@@ -81,9 +81,9 @@ describe('Message Handler', function () {
       info: 'first message'
     };
 
-    const messageHandler1 = new MessageHandler(undefined, endpoint);
-    const messageHandler2 = new MessageHandler(undefined, endpoint);
-    const messageHandler3 = new MessageHandler(undefined, endpoint);
+    const messageHandler1 = new MessageHandlerInterceptor(undefined, endpoint);
+    const messageHandler2 = new MessageHandlerInterceptor(undefined, endpoint);
+    const messageHandler3 = new MessageHandlerInterceptor(undefined, endpoint);
 
     const mockReceive = new MockReceiveInterceptor(function (request, oldRequest) {
 
