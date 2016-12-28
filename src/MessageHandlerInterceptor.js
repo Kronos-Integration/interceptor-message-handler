@@ -6,7 +6,11 @@ import { 
 }
 from 'kronos-interceptor';
 
-const messageHandler = require('kronos-message');
+import { 
+	addHop,
+	createMessage
+}
+from 'kronos-message';
 
 /**
  * This interceptor cares about the handling of the messages.
@@ -18,8 +22,8 @@ export default class MessageHandlerInterceptor extends Interceptor {
 	}
 
 	receive(request, oldRequest) {
-		const newRequest = messageHandler.createMessage(request, oldRequest);
-		messageHandler.addHop(newRequest, this.endpoint.owner.name, this.endpoint.owner.type, this.endpoint.name);
+		const newRequest = createMessage(request, oldRequest);
+		addHop(newRequest, this.endpoint.owner.name, this.endpoint.owner.type, this.endpoint.name);
 
 		return this.connected.receive(newRequest, oldRequest);
 	}
