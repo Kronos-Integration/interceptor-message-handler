@@ -1,14 +1,18 @@
 /* jslint node: true, esnext: true */
 'use strict';
 
-const Interceptor = require('kronos-interceptor').Interceptor;
+import { 
+	Interceptor
+}
+from 'kronos-interceptor';
+
 const messageHandler = require('kronos-message');
 
 /**
  * This interceptor cares about the handling of the messages.
  * It will add the hops and copies the messages
  */
-class MessageHandlerInterceptor extends Interceptor {
+export default class MessageHandlerInterceptor extends Interceptor {
 	static get name() {
 		return 'message-handler';
 	}
@@ -20,5 +24,3 @@ class MessageHandlerInterceptor extends Interceptor {
 		return this.connected.receive(newRequest, oldRequest);
 	}
 }
-
-exports.MessageHandler = MessageHandlerInterceptor;
