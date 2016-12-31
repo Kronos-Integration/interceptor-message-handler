@@ -28,14 +28,14 @@
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^2.0.1",
     "kronos-test-interceptor": "2.0.5",
-    "loglevel-mixin": "^1.6.9",
+    "loglevel-mixin": "^1.6.10",
     "markdown-doctest": "^0.9.1",
     "mocha": "^3.2.0",
     "rollup": "^0.39.0",
     "semantic-release": "^6.3.5"
   },
   "dependencies": {
-    "kronos-interceptor": "^2.4.6",
+    "kronos-interceptor": "^2.4.7",
     "kronos-message": "^2.1.0"
   },
   "contributors": [
