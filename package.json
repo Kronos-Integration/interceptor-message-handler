@@ -31,10 +31,10 @@
     "kronos-test-interceptor": "2.1.0",
     "loglevel-mixin": "^1.6.22",
     "markdown-doctest": "^0.9.1",
-    "mocha": "^3.4.2",
+    "mocha": "^3.5.0",
     "rollup": "^0.45.2",
     "semantic-release": "^6.3.6",
-    "nyc": "^11.0.3"
+    "nyc": "^11.1.0"
   },
   "dependencies": {
     "kronos-interceptor": "^2.4.10",
