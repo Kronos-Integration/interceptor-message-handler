@@ -4,7 +4,9 @@
   "description": "This interceptor cares about the handling of the messages. It will add the hops and copies the messages",
   "main": "dist/module.js",
   "module": "src/module.js",
-  "keywords": ["kronos-interceptor"],
+  "keywords": [
+    "kronos-interceptor"
+  ],
   "scripts": {
     "cover": "nyc npm test",
     "test": "mocha tests/*-test.js",
@@ -29,7 +31,7 @@
     "kronos-test-interceptor": "2.1.0",
     "loglevel-mixin": "^1.6.22",
     "markdown-doctest": "^0.9.1",
-    "mocha": "^3.5.2",
+    "mocha": "^3.5.3",
     "rollup": "^0.49.3",
     "semantic-release": "^8.0.0",
     "nyc": "^11.2.1"
@@ -50,11 +52,15 @@
   ],
   "license": "BSD-2-Clause",
   "engines": {
-    "node": ">=8.4.0"
+    "node": ">=8.5.0"
   },
   "nyc": {
-    "include": ["dist/**/*.js"],
-    "reporter": ["lcov"],
+    "include": [
+      "dist/**/*.js"
+    ],
+    "reporter": [
+      "lcov"
+    ],
     "report-dir": "./coverage"
   },
   "template": {
