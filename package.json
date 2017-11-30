@@ -2,8 +2,8 @@
   "name": "kronos-interceptor-message-handler",
   "version": "0.0.0-semantic-release",
   "description": "This interceptor cares about the handling of the messages. It will add the hops and copies the messages",
-  "main": "dist/module.js",
-  "module": "src/module.js",
+  "main": "dist/message-handler-interceptor.js",
+  "module": "src/message-handler-interceptor.js",
   "keywords": [
     "kronos-interceptor"
   ],
@@ -26,18 +26,18 @@
   },
   "homepage": "https://github.com/Kronos-Integration/kronos-interceptor-message-handler#readme",
   "devDependencies": {
+    "ava": "^0.24.0",
+    "babel-preset-env": "^1.6.1",
+    "jsdoc-babel": "^0.3.0",
     "jsdoc-to-markdown": "^3.0.2",
-    "kronos-test-interceptor": "3.0.0",
+    "kronos-test-interceptor": "^3.1.0",
     "loglevel-mixin": "^2.0.1",
     "markdown-doctest": "^0.9.1",
-    "rollup": "^0.52.0",
-    "semantic-release": "^10.0.1",
     "nyc": "^11.4.0",
-    "jsdoc-babel": "^0.3.0",
-    "ava": "^0.24.0",
+    "rollup": "^0.52.0",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-multi-entry": "^2.0.2",
-    "babel-preset-env": "^1.6.1",
+    "semantic-release": "^10.0.1",
     "xo": "^0.19.0"
   },
   "dependencies": {
@@ -58,15 +58,6 @@
   "engines": {
     "node": ">=8.9.1"
   },
-  "nyc": {
-    "include": [
-      "dist/**/*.js"
-    ],
-    "reporter": [
-      "lcov"
-    ],
-    "report-dir": "./coverage"
-  },
   "template": {
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template.git"
@@ -85,5 +76,14 @@
     "require": [
       "babel-register"
     ]
+  },
+  "nyc": {
+    "include": [
+      "build/*-test.js"
+    ],
+    "reporter": [
+      "lcov"
+    ],
+    "report-dir": "./build/coverage"
   }
 }
