@@ -1,12 +1,23 @@
 {
   "name": "kronos-interceptor-message-handler",
   "version": "0.0.0-semantic-release",
-  "description": "This interceptor cares about the handling of the messages. It will add the hops and copies the messages",
   "main": "dist/message-handler-interceptor.js",
   "module": "src/message-handler-interceptor.js",
+  "description": "This interceptor cares about the handling of the messages. It will add the hops and copies the messages",
   "keywords": [
     "kronos-interceptor"
   ],
+  "contributors": [
+    {
+      "name": "Torsten Link",
+      "email": "torstenlink@gmx.de"
+    },
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
+  ],
+  "license": "BSD-2-Clause",
   "scripts": {
     "cover": "nyc --temp-directory build/nyc ava",
     "test": "ava",
@@ -18,14 +29,10 @@
     "prepare": "rollup -c",
     "lint": "documentation lint src/message-handler-interceptor.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kronos-Integration/kronos-interceptor-message-handler.git"
+  "dependencies": {
+    "kronos-interceptor": "^2.4.10",
+    "kronos-message": "^2.1.4"
   },
-  "bugs": {
-    "url": "https://github.com/Kronos-Integration/kronos-interceptor-message-handler/issues"
-  },
-  "homepage": "https://github.com/Kronos-Integration/kronos-interceptor-message-handler#readme",
   "devDependencies": {
     "ava": "^0.24.0",
     "kronos-test-interceptor": "^3.1.0",
@@ -38,32 +45,17 @@
     "xo": "^0.19.0",
     "documentation": "^5.3.5"
   },
-  "dependencies": {
-    "kronos-interceptor": "^2.4.10",
-    "kronos-message": "^2.1.4"
-  },
-  "contributors": [
-    {
-      "name": "Torsten Link",
-      "email": "torstenlink@gmx.de"
-    },
-    {
-      "name": "Markus Felten",
-      "email": "markus.felten@gmx.de"
-    }
-  ],
-  "license": "BSD-2-Clause",
   "engines": {
     "node": ">=8.9.3"
   },
-  "template": {
-    "repository": {
-      "url": "https://github.com/arlac77/npm-package-template.git"
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kronos-Integration/kronos-interceptor-message-handler.git"
   },
-  "xo": {
-    "space": true
+  "bugs": {
+    "url": "https://github.com/Kronos-Integration/kronos-interceptor-message-handler/issues"
   },
+  "homepage": "https://github.com/Kronos-Integration/kronos-interceptor-message-handler#readme",
   "ava": {
     "files": [
       "build/*-test.js"
@@ -83,5 +75,13 @@
       "lcov"
     ],
     "report-dir": "./build/coverage"
+  },
+  "xo": {
+    "space": true
+  },
+  "template": {
+    "repository": {
+      "url": "https://github.com/arlac77/npm-package-template.git"
+    }
   }
 }
