@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "kronos-interceptor": "^2.4.10",
-    "kronos-message": "^2.1.6"
+    "kronos-message": "^2.2.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
