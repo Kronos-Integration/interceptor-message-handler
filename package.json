@@ -40,7 +40,7 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "kronos-test-interceptor": "^3.1.0",
-    "loglevel-mixin": "^2.0.2",
+    "loglevel-mixin": "^2.0.3",
     "markdown-doctest": "^0.9.1",
     "nyc": "^13.0.1",
     "rollup": "^0.64.1",
