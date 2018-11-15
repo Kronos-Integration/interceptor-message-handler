@@ -20,7 +20,7 @@ kronos-interceptor-message-handler
 This interceptor cares about the handling of the messages
 It will add the hops and copies the messages
 
-# API Reference
+# API
 
 * * *
 
