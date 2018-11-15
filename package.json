@@ -38,7 +38,7 @@
   "devDependencies": {
     "ava": "^1.0.0-rc.2",
     "kronos-test-interceptor": "^3.1.0",
-    "loglevel-mixin": "^2.0.4",
+    "loglevel-mixin": "^2.0.5",
     "markdown-doctest": "^0.9.1",
     "rollup": "^0.67.1",
     "semantic-release": "^15.12.0",
