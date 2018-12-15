@@ -36,7 +36,7 @@
     "kronos-message": "^2.2.0"
   },
   "devDependencies": {
-    "ava": "^1.0.0-rc.2",
+    "ava": "^1.0.1",
     "kronos-test-interceptor": "^3.1.0",
     "loglevel-mixin": "^2.0.5",
     "markdown-doctest": "^0.9.1",
