@@ -38,7 +38,7 @@
     "ava": "^2.4.0",
     "builtin-modules": "^3.1.0",
     "c8": "^7.0.0",
-    "documentation": "^12.1.4",
+    "documentation": "^13.0.0",
     "esm": "^3.2.25",
     "kronos-test-interceptor": "^3.1.0",
     "loglevel-mixin": "^5.0.3",
