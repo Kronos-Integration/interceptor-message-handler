@@ -34,7 +34,7 @@
     "lint": "documentation lint dist/message-handler-interceptor.js"
   },
   "dependencies": {
-    "@kronos-integration/interceptor": "^2.6.0",
+    "@kronos-integration/interceptor": "^9.2.1",
     "@kronos-integration/message": "^2.2.0"
   },
   "devDependencies": {
