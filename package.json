@@ -43,7 +43,7 @@
     "documentation": "^13.0.0",
     "esm": "^3.2.25",
     "loglevel-mixin": "^5.0.3",
-    "semantic-release": "^17.0.7"
+    "semantic-release": "^17.0.8"
   },
   "engines": {
     "node": ">=14.3.0"
