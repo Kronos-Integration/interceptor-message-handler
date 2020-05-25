@@ -1,17 +1,16 @@
 {
-  "name": "kronos-interceptor-message-handler",
+  "name": "@kronos-integeration/interceptor-message-handler",
   "version": "0.0.0-semantic-release",
   "publishConfig": {
     "access": "public"
   },
   "sideEffects": false,
   "type": "module",
-  "main": "dist/message-handler-interceptor.js",
+  "main": "./src/message-handler-interceptor.mjs",
   "exports": {
-    ".": "dist/message-handler-interceptor.js",
+    ".": "./src/message-handler-interceptor.mjs",
     "./": "./"
   },
-  "module": "src/message-handler-interceptor.js",
   "description": "This interceptor cares about the handling of the messages. It will add the hops and copies the messages",
   "keywords": [
     "kronos-interceptor"
@@ -30,8 +29,8 @@
   "scripts": {
     "test": "ava --timeout 2m",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 2m && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
-    "docs": "documentation readme dist/message-handler-interceptor.js --section=API",
-    "lint": "documentation lint dist/message-handler-interceptor.js"
+    "docs": "documentation readme ./src/message-handler-interceptor.mjs --section=API",
+    "lint": "documentation lint ./src/message-handler-interceptor.mjs"
   },
   "dependencies": {
     "@kronos-integration/interceptor": "^9.2.1",
