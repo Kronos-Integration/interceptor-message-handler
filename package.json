@@ -8,8 +8,7 @@
   "type": "module",
   "main": "./src/message-handler-interceptor.mjs",
   "exports": {
-    ".": "./src/message-handler-interceptor.mjs",
-    "./": "./"
+    ".": "./src/message-handler-interceptor.mjs"
   },
   "description": "This interceptor cares about the handling of the messages. It will add the hops and copies the messages",
   "keywords": [
