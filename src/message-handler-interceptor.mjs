@@ -1,4 +1,4 @@
-import { Interceptor } from 'kronos-interceptor';
+import { Interceptor } from "@kronos-integration/interceptor";
 import { addHop, createMessage } from 'kronos-message';
 
 /**
