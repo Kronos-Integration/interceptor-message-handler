@@ -4,7 +4,7 @@ import {
   MockReceiveInterceptor
 } from 'kronos-test-interceptor';
 import { MessageHandlerInterceptor } from '../src/message-handler-interceptor';
-import { ConnectorMixin } from 'kronos-interceptor';
+import { ConnectorMixin } from "@kronos-integration/interceptor";
 import test from 'ava';
 
 const logger = {
