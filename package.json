@@ -43,7 +43,7 @@
     "documentation": "github:arlac77/documentation",
     "esm": "^3.2.25",
     "loglevel-mixin": "^6.0.0",
-    "semantic-release": "^17.2.3"
+    "semantic-release": "^17.3.0"
   },
   "engines": {
     "node": ">=14.15.1"
