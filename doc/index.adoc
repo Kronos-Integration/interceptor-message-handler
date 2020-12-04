@@ -1,0 +1,88 @@
+== Token to Object Transformer
+This module consumes an object stream as created by https://github.com/darlenya/stream-line-parser[stream-line-tokenizer-csv] And transforms
+the array of tokens in an object.
+
+.Line object example
+[source,json]
+----
+{
+  "lineNumber": 1,
+  "data": ["any", "line", "data"]
+}
+----
+
+would be transformed into:
+
+[source,json]
+----
+{
+  "lineNumber": 1,
+  "data": {
+    "Col 1" : "any",
+    "Col 2" : "line",
+    "Col 3" : "data"
+  }
+}
+----
+
+=== Install
+[source,bash]
+----
+$ npm install stream-line-tokens2obj
+----
+
+
+=== Usage
+
+.Options for the transformer
+[source,js]
+----
+{
+  "header" : ['a', 'b', 'c', undefined, 'e'], <1>
+  "strict" : false,                           <2>
+  "severity" : 'skip_record',                 <3>
+  "skip_first_row" : true                     <4>
+}
+----
+<1> (Optional). The header could also be set by the token stream if the element with lineNumber '0' contains a
+header element. But if a header is given here. It will overwrite the header from the stream.
+<2> (Optional, default is ''false'' ). If set to true, it will be checked that the token count is equal to the given header tokens.
+<3> (Optional, default ''skip_record''). The severity to be used if the strict check found an error.
+<4> (Optional, default is ''true''). As usually the first row will contains the header, the first row will be skipped. If in the first
+row a header element will be detected, it will be skipped even if this parameter is set to false.
+
+
+.Usage example
+[source,js]
+----
+const fs = require('fs');
+const lp = require('stream-line-parser');
+const tk = require('stream-line-tokenizer-csv');
+const t2o = require('stream-line-tokens2obj');
+
+let parser = lp({
+  "allow_new_line_in_cell" : true,
+	"line_separator": "\n",
+  "quote_char" : '"',
+  "skip_empty_lines" : true
+});
+
+let tokenizer = tk({
+  "separator_list" : [',', ';'],
+  "quote_char" : '"',
+  "use_quotes" : true,
+  "trim" : true
+  });
+
+  let tokens2obj = t2o({
+    "strict" : false
+    });
+
+fs.createReadStream('filename.csv').pipe(parser).pipe(tokenizer).pipe(tokens2obj);
+
+----
+
+This will read the file 'filename.csv'. The stream will be piped to the parser which
+will split the stream in to objects. The parser emits an object stream. This object
+stream will then be piped to the line tokenizer.+
+Then for each row an object will be created.
