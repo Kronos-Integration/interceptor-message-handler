@@ -40,7 +40,7 @@
     "c8": "^7.3.5",
     "documentation": "github:arlac77/documentation",
     "esm": "^3.2.25",
-    "loglevel-mixin": "^6.0.0",
+    "loglevel-mixin": "^6.0.1",
     "semantic-release": "^17.3.0"
   },
   "engines": {
