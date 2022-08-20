@@ -38,7 +38,7 @@
   "devDependencies": {
     "ava": "^4.3.1",
     "c8": "^7.12.0",
-    "documentation": "^13.2.5",
+    "documentation": "^14.0.0",
     "esm": "^3.2.25",
     "loglevel-mixin": "^6.1.4",
     "semantic-release": "^19.0.3"
