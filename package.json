@@ -41,10 +41,10 @@
     "documentation": "^14.0.2",
     "esm": "^3.2.25",
     "loglevel-mixin": "^7.0.1",
-    "semantic-release": "^21.0.9"
+    "semantic-release": "^21.1.0"
   },
   "engines": {
-    "node": ">=20.5.0"
+    "node": ">=20.5.1"
   },
   "repository": {
     "type": "git",
