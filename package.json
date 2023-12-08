@@ -39,7 +39,7 @@
     "c8": "^8.0.1",
     "documentation": "^14.0.2",
     "esm": "^3.2.25",
-    "loglevel-mixin": "^7.0.2",
+    "loglevel-mixin": "^7.1.0",
     "semantic-release": "^22.0.10"
   },
   "engines": {
