@@ -42,7 +42,7 @@
     "documentation": "^14.0.3",
     "esm": "^3.2.25",
     "loglevel-mixin": "^7.2.7",
-    "semantic-release": "^25.0.2"
+    "semantic-release": "^25.0.3"
   },
   "engines": {
     "node": ">=22.11.0"
