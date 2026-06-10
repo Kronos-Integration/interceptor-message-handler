@@ -42,7 +42,7 @@
     "documentation": "^14.0.3",
     "esm": "^3.2.25",
     "loglevel-mixin": "^7.2.11",
-    "semantic-release": "^25.0.3"
+    "semantic-release": "^25.0.5"
   },
   "overrides": {
     "c8": {
