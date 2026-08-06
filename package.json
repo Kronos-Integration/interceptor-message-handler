@@ -33,7 +33,7 @@
     "lint:docs": "documentation lint ./src**/*.mjs"
   },
   "dependencies": {
-    "@kronos-integration/interceptor": "^13.3.6",
+    "@kronos-integration/interceptor": "^13.3.7",
     "@kronos-integration/message": "^2.2.0"
   },
   "devDependencies": {
@@ -41,7 +41,7 @@
     "c8": "^12.0.0",
     "documentation": "^14.0.3",
     "esm": "^3.2.25",
-    "loglevel-mixin": "^7.2.11",
+    "loglevel-mixin": "^7.2.12",
     "semantic-release": "^25.0.9"
   },
   "engines": {
